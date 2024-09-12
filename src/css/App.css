@@ -31,14 +31,14 @@ body {
   }
 }
 
-header,
-footer {
+header, footer {
   display: flex;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.507);
   width: 100%;
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 0;
   & nav {
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,9 +54,6 @@ footer {
       gap: 2rem;
     }
   }
-  
-
-
 }
 
 a {
@@ -100,18 +97,26 @@ h1 {
 
 #burgerMenu {
   display: none;
-  position: absolute;
-
-
 }
 
 @media screen and (max-width: 600px) {
+  main {
+    margin: 2rem 0;
+    gap: 3rem;
+    width: 100%;
+  }
   #burgerMenu {
-    display: block;
+    display: flex;
   }
 
-  header .headerLinks {
-    display: none;
+  header {
+    & nav {
+      justify-content: space-between;
+      & .headerLinks {
+        display: none;
+      }
+      
+    }
   }
 
 }

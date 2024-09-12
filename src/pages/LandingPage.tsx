@@ -32,7 +32,6 @@ export default function LandingPage(): ReactElement {
         </section>
       </section>
 
-
       <Link to={"/"} onClick={getRandom} className="surpriseMeButton">Surprise me</Link>
     </>
   )

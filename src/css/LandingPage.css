@@ -36,8 +36,7 @@
   }
 }
 
-.moreButtonContainer,
-.surpriseMeButton {
+.moreButtonContainer, .surpriseMeButton {
   margin: 0;
   padding: 0;
   display: flex;
@@ -58,4 +57,43 @@ h2 {
   margin: 0;
   font-size: 30px;
   text-shadow: 0 0 1px #000000;
+}
+
+
+@media screen and (max-height: 700px) {
+  
+  #randomCocktailCard {
+    & #randomCocktailCard-leftSide {
+      & img {
+        height: 20rem;
+        width: 20rem;
+      }
+    }
+  }
+
+  .moreButtonContainer, .surpriseMeButton {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+  #randomCocktailCard {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+    position: relative;
+    width: 100%;
+    & #randomCocktailCard-leftSide {
+      & img {
+        width: 100%;
+        height: 30rem;
+      }
+    }
+
+    & #randomCocktailCard-rightSide {
+      position: absolute;
+      
+    }
+
+  }
 }
