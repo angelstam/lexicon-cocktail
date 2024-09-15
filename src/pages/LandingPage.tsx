@@ -23,11 +23,14 @@ export default function LandingPage(): ReactElement {
 
         <section id="randomCocktailCard-rightSide">
           <p>{drink?.drink}</p>
-
-          <Link to={""} className="moreButtonContainer">
-            <span className="material-symbols-outlined">info</span>
-            More
-          </Link>
+          
+          <div className="moreButtonContainer">
+            <Link to={""} className="moreButton">
+              <section className="material-symbols-outlined">info</section>
+              More
+            </Link>
+          </div>
+          
 
         </section>
       </section>

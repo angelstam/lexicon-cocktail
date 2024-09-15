@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr;
   padding: 0;
   margin: 0;
-  gap: 5rem;
+  width: 100%;
 
   & #randomCocktailCard-leftSide {
     margin: 0;
@@ -18,7 +18,7 @@
   }
 
   & #randomCocktailCard-rightSide {
-
+    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -33,14 +33,19 @@
       text-align: center;
     }
 
+    & > * {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      font-size: 40px;
+    }
   }
 }
 
-.moreButtonContainer, .surpriseMeButton {
+.moreButton, .surpriseMeButton {
+  height: fit-content;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
   padding: 1rem;
   gap: 0.5rem;
   background-color: rgba(240, 255, 255, 0);
@@ -51,6 +56,7 @@
   box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.75);
 
 }
+
 
 h2 {
   text-align: center;
@@ -65,35 +71,65 @@ h2 {
   #randomCocktailCard {
     & #randomCocktailCard-leftSide {
       & img {
-        height: 20rem;
-        width: 20rem;
+        height: 25rem;
+        width: 25rem;
       }
     }
   }
 
-  .moreButtonContainer, .surpriseMeButton {
+  .moreButton, .surpriseMeButton {
     font-size: 25px;
   }
 }
 
+
 @media screen and (max-width: 600px) {
   
   #randomCocktailCard {
+    justify-items: center;
     grid-template-columns: 1fr;
-    gap: 0rem;
-    position: relative;
-    width: 100%;
+    & #randomCocktailCard-leftSide {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    & #randomCocktailCard-rightSide {
+      width: 20rem;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+      grid-row: 1;
+      grid-column: 1;
+      border-radius: 1rem;
+
+      & > * {
+        background-color: #00000052;
+      }
+
+      & > :first-child {
+        border-radius: 1rem 1rem 0 0;
+      }
+      & > :last-child {
+        padding-bottom: 0.5rem;
+        border-radius: 0 0 1rem 1rem;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 400px) {
+  
+  #randomCocktailCard {
     & #randomCocktailCard-leftSide {
       & img {
-        width: 100%;
-        height: 30rem;
+        height: 100vw;
+        width: 100vw;
       }
     }
 
     & #randomCocktailCard-rightSide {
-      position: absolute;
-      
+      width: calc(100vw - 4px);
     }
-
   }
 }
