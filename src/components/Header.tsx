@@ -1,11 +1,20 @@
 import { NavLink } from 'react-router-dom'
 
 export default function Header() {
+
+  function showMobileNavigationMenu() {
+    let headerLinks = document.getElementById("headerLinks");
+    headerLinks?.classList.toggle("mobile");
+
+    let headerElement = document.getElementById("headerLinks");
+  }
+
   return (
     <header>
-        <nav>
+      <div className="headerNavigationContainer">
+        <nav className="headerNavigation">
           <h1>CocktailDB</h1>
-          <section className="headerLinks">
+          <section id="headerLinks" className="headerLinks">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -28,10 +37,12 @@ export default function Header() {
               Search
             </NavLink>
           </section>
-          <section id="burgerMenu" className="material-symbols-outlined">
-            menu
-          </section>
         </nav>
-      </header>
+      </div>
+
+      <section id="burgerMenu" className="material-symbols-outlined" onClick={showMobileNavigationMenu}>
+          menu
+      </section>
+    </header>
   )
 }

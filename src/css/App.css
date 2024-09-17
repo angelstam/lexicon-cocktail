@@ -12,6 +12,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #8a6c0b;
+  
 }
 
 #root {
@@ -21,7 +22,6 @@ body {
   min-height: 100vh;
 
   & main {
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -29,30 +29,35 @@ body {
     flex: 1;
     max-width: 1000px;
     width: 100%;
+    padding: 0 1rem;
   }
 }
 
 header, footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.507);
   width: 100%;
   padding: 1rem 0;
-  & nav {
-    padding: 0 1rem;
+  & div.headerNavigationContainer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
     width: 100%;
-    
     max-width: 1000px;
-
-    & .headerLinks {
+    padding: 0 1rem;
+    & nav.headerNavigation {
+      width: 100%;
       display: flex;
-      justify-content: space-around;
-      align-items: baseline;
-      gap: 2rem;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+  
+      & .headerLinks {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        gap: 2rem;
+      }
     }
   }
 }
@@ -111,13 +116,22 @@ h1 {
   }
 
   header {
-    & nav {
-      justify-content: space-between;
-      & .headerLinks {
-        display: none;
-      }
+    & div.headerDivision {
+      display: flex;
       
+      padding-left: 1rem;
+      & nav.headerNavigationContainer {
+        justify-content: space-between;
+        & section.headerLinks {
+          display: none;
+          &.mobile {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
     }
+    
   }
 
 }
