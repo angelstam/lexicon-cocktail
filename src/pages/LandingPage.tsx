@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useContext, useEffect, useState } from "react";
 import * as CocktailDB from "../data/TheCocktailDB.ts";
 import { Link, useLoaderData } from "react-router-dom";
 import FavoriteButton from "../components/FavoriteButton.tsx";
@@ -17,6 +17,7 @@ export default function LandingPage(): ReactElement {
 
   async function getRandom() {
     let aRandomDrink: CocktailDB.Drink = await CocktailDB.random();
+    //console.log(aRandomDrink);
     setDrink(aRandomDrink);
   }
   
@@ -38,7 +39,6 @@ export default function LandingPage(): ReactElement {
             <span className="material-symbols-outlined">info</span>
             More
           </Link>
-
         </section>
       </section>
 
