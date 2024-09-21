@@ -20,21 +20,5 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - run : cat .git/config
-    - run : git config user.name github-actions
-      shell: bash
-    - run : git config user.email github-actions@github.com
-      shell: bash
-    - run : git worktree add -b gh-pages build origin/gh-pages
-      shell: bash
-    - run : cp -r dist/* build/
-      shell: bash
-    - run : git add --all
-      working-directory: ./build
-      shell: bash
-    - run : git commit --allow-empty -m "Automatic Build and Deploy run by GitHub Actions of commit ${{ github.sha }}."
-      working-directory: ./build
-      shell: bash
-    - run : git push
-      working-directory: ./build
-      shell: bash
+    - name: Deploy React app to GitHub Pages
+      uses: angelstam/github-push-to-gh-pages@v1
